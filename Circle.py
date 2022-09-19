@@ -22,10 +22,12 @@ class Circle(Figure):
         return Circle(x, y, self.radius)
 
     def __sub__(self, other):
+        x = self.x - other.x
+        y = self.y - other.y
         radius = self.radius - other.radius
         if radius < 0:
             radius *= -1
         if radius == 0:
-            return Point(self.x, self.y)
+            return Point(x, y)
         else:
-            return Circle(self.x, self.y, radius)
+            return Circle(x, y, radius)
